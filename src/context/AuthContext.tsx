@@ -34,7 +34,7 @@ export function AuthProvider({children}:AuthProviderPropsType){
             setJwtToken(jwtToken)
             setLoading(false)
         }else{
-
+            setLoading(false)
         }
     },[])
 

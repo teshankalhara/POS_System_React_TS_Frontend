@@ -1,6 +1,6 @@
-interface ItemCategoryType{
-    id:number,
-    name:string
+interface ItemCategoryType {
+    id: number,
+    name: string
 }
 
 export default ItemCategoryType

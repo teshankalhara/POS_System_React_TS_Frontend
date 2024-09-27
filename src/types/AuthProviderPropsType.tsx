@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
-interface AuthProviderPropsType{
-    children:ReactNode
+interface AuthProviderPropsType {
+    children: ReactNode
 }
 
 export default AuthProviderPropsType
