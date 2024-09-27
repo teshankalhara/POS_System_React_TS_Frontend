@@ -4,43 +4,43 @@ import { useAuth } from "../../context/AuthContext"
 import { useNavigate } from "react-router-dom"
 
 function Login() {
-    const {login}=useAuth()
-    const [username,setUsername]=useState<string>("")
-    const [password,setPassword]=useState<string>("")
-    const [error,setError]=useState<string>("")
+    const { login } = useAuth()
+    const [username, setUsername] = useState<string>("")
+    const [password, setPassword] = useState<string>("")
+    const [error, setError] = useState<string>("")
 
-    const navigate=useNavigate()
+    const navigate = useNavigate()
 
-    function usernameChange(event:any){
+    function usernameChange(event: any) {
         setUsername(event.target.value)
         setError("")
     }
 
-    function passwordChange(event:any){
+    function passwordChange(event: any) {
         setPassword(event.target.value)
         setError("")
     }
 
-    async function submit(event:any) {
+    async function submit(event: any) {
         event.preventDefault()
-        if(username===""&&password===""){
+        if (username === "" && password === "") {
             setError("Username and Password Required!")
-        }else if(username===""){
+        } else if (username === "") {
             setError("Username Required!")
-        }else if(password===""){
+        } else if (password === "") {
             setError("Password Required!")
         }
-        const data={
-            username:username,
-            password:password
+        const data = {
+            username: username,
+            password: password
         }
 
-        try{
-            const response=await axios.post("http://127.0.0.1:8000/user/login",data)
+        try {
+            const response = await axios.post("http://127.0.0.1:8000/user/login", data)
             login(response.data)
             //console.log(response.data)
             navigate("/")
-        }catch(error){
+        } catch (error) {
             setError("There was an error login!")
         }
     }
@@ -56,7 +56,7 @@ function Login() {
                     <div>
                         <input type="password" onChange={passwordChange} placeholder="Password" />
                     </div>
-                    {error&&<div>{error}</div>}
+                    {error && <div>{error}</div>}
                     <div>
                         <button type="submit">Login</button>
                     </div>

@@ -9,7 +9,7 @@ function Signin() {
     const [confirmPassword, setConfirmPassword] = useState<string>("")
     const [error, setError] = useState<string>("")
 
-    const navigate=useNavigate()
+    const navigate = useNavigate()
 
     function usernameChange(event: any) {
         setUsername(event.target.value)
@@ -43,23 +43,23 @@ function Signin() {
             if (confirmPassword === "") {
                 setError("Password and Confirm Password Required!")
             }
-        } else if(confirmPassword === ""){
+        } else if (confirmPassword === "") {
             setError("Confirm Password Required!")
         }
 
-        if(password==confirmPassword){
-            const data={
-                username:username,
-                password:password
+        if (password == confirmPassword) {
+            const data = {
+                username: username,
+                password: password
             }
-            try{
-                const response=await axios.post("http://127.0.0.1:8000/user/sign",data)
+            try {
+                const response = await axios.post("http://127.0.0.1:8000/user/sign", data)
                 console.log(response.data)
                 navigate("/login")
-            }catch(error){
+            } catch (error) {
                 setError("There was an error create account!")
             }
-        }else{
+        } else {
             setError("Password and Confirm Password Mismatch!")
         }
 
