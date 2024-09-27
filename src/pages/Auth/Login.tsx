@@ -21,13 +21,14 @@ function Login() {
         setError("")
     }
 
-    //console.log(username)
-    //console.log(password)
-
     async function submit(event:any) {
         event.preventDefault()
-        if(username===""||password===""){
+        if(username===""&&password===""){
             setError("Username and Password Required!")
+        }else if(username===""){
+            setError("Username Required!")
+        }else if(password===""){
+            setError("Password Required!")
         }
         const data={
             username:username,
