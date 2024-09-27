@@ -2,47 +2,47 @@ import { createContext, useContext, useEffect, useState } from "react";
 import AuthContextType from "../types/AuthContextType";
 import AuthProviderPropsType from "../types/AuthProviderPropsType";
 
-export const AuthContext=createContext<AuthContextType>({
-    isAuthenticated:false,
-    jwtToken:null,
-    loading:true,
-    login:()=>{},
-    logout:()=>{}
+export const AuthContext = createContext<AuthContextType>({
+    isAuthenticated: false,
+    jwtToken: null,
+    loading: true,
+    login: () => { },
+    logout: () => { }
 })
 
-export function AuthProvider({children}:AuthProviderPropsType){
-    const [isAuthenticated,setIsAuthenticated]=useState<boolean>(false)
-    const [jwtToken,setJwtToken]=useState<string|null>(null)
-    const [loading,setLoading]=useState<boolean>(true)
-    
-    function login(jwtToken:string){
+export function AuthProvider({ children }: AuthProviderPropsType) {
+    const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false)
+    const [jwtToken, setJwtToken] = useState<string | null>(null)
+    const [loading, setLoading] = useState<boolean>(true)
+
+    function login(jwtToken: string) {
         setIsAuthenticated(true)
         setJwtToken(jwtToken)
-        localStorage.setItem("token",jwtToken)
+        localStorage.setItem("token", jwtToken)
     }
 
-    function logout(){
+    function logout() {
         setIsAuthenticated(false)
         setJwtToken(null)
         localStorage.removeItem("token")
     }
 
-    useEffect(()=>{
-        const token=localStorage.getItem("token")
-        if(token!=null){
+    useEffect(() => {
+        const token = localStorage.getItem("token")
+        if (token != null) {
             setIsAuthenticated(true)
-            setJwtToken(jwtToken)
+            setJwtToken(token)
             setLoading(false)
         }else{
             setLoading(false)
         }
-    },[])
+    }, [])
 
-    return(
-        <AuthContext.Provider value={{isAuthenticated,jwtToken,loading,login,logout}}>
+    return (
+        <AuthContext.Provider value={{ isAuthenticated, jwtToken, loading, login, logout }}>
             {children}
         </AuthContext.Provider>
     )
 }
 
-export const useAuth=()=>useContext(AuthContext)
+export const useAuth = () => useContext(AuthContext)
