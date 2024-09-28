@@ -23,19 +23,19 @@ function Item() {
 
     async function loadItems() {
         try {
-            const response = await axios.get("http://127.0.0.1:8000/item", config);
+            const response = await axios.get("http://127.0.0.1:8000/item", config)
             setItem(response.data);
         } catch (error) {
-            console.error("Error loading items:", error);
+            console.error("Error loading items:", error)
         }
     }
 
     async function loadCategories() {
         try {
-            const response = await axios.get("http://127.0.0.1:8000/category", config);
-            setItemCategories(response.data);
+            const response = await axios.get("http://127.0.0.1:8000/category", config)
+            setItemCategories(response.data)
         } catch (error) {
-            console.error("Error loading categories:", error);
+            console.error("Error loading categories:", error)
         }
     }
 

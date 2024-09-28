@@ -16,9 +16,13 @@ function ItemCategory() {
     }
 
     async function loadCategories() {
-        const response = await axios.get("http://127.0.0.1:8000/category", config)
-        console.log(response)
-        setCategories(response.data)
+        try {
+            const response = await axios.get("http://127.0.0.1:8000/category", config)
+            console.log(response)
+            setCategories(response.data)
+        } catch (error: any) {
+            console.log(error)
+        }
     }
 
     useEffect(function () {
@@ -40,7 +44,7 @@ function ItemCategory() {
             console.log(response.data)
             loadCategories()
             setCategoryName("")
-        } catch (error:any) {
+        } catch (error: any) {
             console.log(error)
         }
     }
