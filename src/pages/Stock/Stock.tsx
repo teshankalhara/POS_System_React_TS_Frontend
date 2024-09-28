@@ -72,32 +72,32 @@ function Stock() {
         }
     }
 
-    async function deleteStock(stockId:number){
-        try{
-            await axios.delete(`http://127.0.0.1:8000/stock/${stockId}`,config)
+    async function deleteStock(stockId: number) {
+        try {
+            await axios.delete(`http://127.0.0.1:8000/stock/${stockId}`, config)
             loadStock()
-        }catch(error:any){
+        } catch (error: any) {
             console.log(error)
         }
     }
 
-    const [editedStock,setEditedStock]=useState<StockType|null>()
+    const [editedStock, setEditedStock] = useState<StockType | null>()
 
-    function editStock(stock:StockType){
+    function editStock(stock: StockType) {
         setEditedStock(stock)
         setItemQty(stock.qty)
         setItemId(stock.item?.id)
     }
 
-    async function updateStock(){
-        const data={
+    async function updateStock() {
+        const data = {
             qty: itemQty,
             itemId: itemId
         }
-        try{
-            await axios.put(`http://127.0.0.1:8000/stock/${editedStock?.id}`,data,config)
+        try {
+            await axios.put(`http://127.0.0.1:8000/stock/${editedStock?.id}`, data, config)
             loadStock()
-        }catch(error:any){
+        } catch (error: any) {
             console.log(error)
         }
     }
@@ -107,7 +107,8 @@ function Stock() {
             <div className="text-center border-b-2 border-b-slate-200 pb-3">
                 <h1 className="text-3xl font-extrabold">Stock</h1>
             </div>
-            <div className="container mx-auto">
+
+            <div className="container mx-auto mb-10">
                 <div className="mt-4 mb-8">
                     <div className="text-center mb-2">
                         <h1 className="text-xl font-bold text-slate-700">Create Category</h1>
@@ -133,6 +134,7 @@ function Stock() {
                                         })}
                                 </select>
                             </div>
+
                             <div>
                                 <label className="text-slate-600 font-sm block mb-2">Qty:</label>
                                 <input
@@ -147,24 +149,24 @@ function Stock() {
                             </div>
 
                             <div>
-                                {editedStock?(
+                                {editedStock ? (
                                     <button
-                                    className="border w-full text-white rounded-lg px-4 py-3 font-medium bg-slate-700 hover:bg-slate-800"
-                                    type="button"
-                                    onClick={updateStock}
-                                >
-                                    Update
-                                </button>
-                                ):(
+                                        className="border w-full text-white rounded-lg px-4 py-3 font-medium bg-slate-700 hover:bg-slate-800"
+                                        type="button"
+                                        onClick={updateStock}
+                                    >
+                                        Update
+                                    </button>
+                                ) : (
                                     <button
-                                    className="border w-full text-white rounded-lg px-4 py-3 font-medium bg-slate-700 hover:bg-slate-800"
-                                    type="button"
-                                    onClick={addStock}
-                                >
-                                    Add
-                                </button>
+                                        className="border w-full text-white rounded-lg px-4 py-3 font-medium bg-slate-700 hover:bg-slate-800"
+                                        type="button"
+                                        onClick={addStock}
+                                    >
+                                        Add
+                                    </button>
                                 )}
-                                
+
                             </div>
                         </form>
                     </div>
@@ -197,10 +199,10 @@ function Stock() {
                                             <td className="border p-1 px-2 text-right">{stock.qty}</td>
                                             <td className="border p-1 px-2 text-right">{stock.item.price}</td>
                                             <td className="border p-1 px-0 text-center">
-                                                <button className="bg-slate-200 text-slate-600 px-2 py-1 rounded-lg hover:bg-slate-500 hover:text-white mx-1" type="button" onClick={()=>editStock(stock)}>
+                                                <button className="bg-slate-200 text-slate-600 px-2 py-1 rounded-lg hover:bg-slate-500 hover:text-white mx-1" type="button" onClick={() => editStock(stock)}>
                                                     Edit
                                                 </button>
-                                                <button className="bg-red-200 text-slate-600 px-2 py-1 rounded-lg hover:bg-red-500 hover:text-white mx-1" type="button" onClick={()=>deleteStock(stock.id)}>
+                                                <button className="bg-red-200 text-slate-600 px-2 py-1 rounded-lg hover:bg-red-500 hover:text-white mx-1" type="button" onClick={() => deleteStock(stock.id)}>
                                                     Delete
                                                 </button>
                                             </td>

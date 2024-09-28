@@ -127,6 +127,7 @@ function Item() {
             <div className="text-center border-b-2 border-b-slate-200 pb-3">
                 <h1 className="text-3xl font-extrabold">Item</h1>
             </div>
+            
             <div className="container mx-auto mb-10">
                 <div className="mt-4 mb-8">
                     <div className="text-center mb-2">

@@ -54,7 +54,8 @@ function ItemCategory() {
             <div className="text-center border-b-2 border-b-slate-200 pb-3">
                 <h1 className="text-3xl font-extrabold">Category</h1>
             </div>
-            <div className="container mx-auto">
+
+            <div className="container mx-auto mb-10">
                 <div className="mt-4 mb-8">
                     <div className="text-center mb-2">
                         <h1 className="text-xl font-bold text-slate-700">Create Category</h1>
