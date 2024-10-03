@@ -52,29 +52,19 @@ function Order() {
                         <table className="table min-w-full border-separate border-spacing-0 border-none text-left">
                             <thead>
                                 <tr>
-                                    <th className="border py-3 p-2 w-[70px]">No.</th>
-                                    <th className="border py-3 p-2">Ordered Items</th>
+                                    <th className="border py-3 p-2 w-[150px]">Ordered ID</th>
                                     <th className="border py-3 p-2">Ordered Date</th>
                                     <th className="border py-3 p-2">Total Price (LKR)</th>
-                                    <th className="border py-3 p-2 px-0 w-auto">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {orders.map((order, id) => (
                                     <tr key={id}>
-                                        <td className="border p-1 px-2">{id + 1}</td>
                                         <td className="border p-1 px-2">
-                                            {order.orderedItems?.map((orderItem, orderItemId) => (
-                                                <div key={orderItemId}>
-                                                    {orderItem && orderItem.items.map((item, itemId) => (
-                                                        <span key={itemId} className="block">{item.id}</span>
-                                                    ))}
-                                                </div>
-                                            )) || <span>No items</span>}
+                                            {order.id}
                                         </td>
                                         <td className="border p-1 px-2">date</td>
                                         <td className="border p-1 px-2">{order.totalPrice}</td>
-                                        <td className="border p-1 px-2">X</td>
                                     </tr>
                                 ))}
                             </tbody>
