@@ -135,7 +135,7 @@ function Item() {
                     </div>
 
                     <div className="flex justify-center">
-                        <form className="border border-slate-200 py-3 rounded-lg max-w-[500px] min-w-[400px] center px-2 mb-2 shadow-lg">
+                        <form className="border border-slate-200 rounded-lg max-w-[500px] min-w-[400px] center mb-2 p-4 shadow-lg">
                             <div>
                                 <label className="text-slate-600 font-sm block mb-2">Name:</label>
                                 <input type="text" className="text-slate-600 font-sm block mb-2 w-full p-2 border border-slate-300 rounded-lg" onChange={onChangeItemName} value={itemName} required />
