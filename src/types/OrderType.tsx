@@ -2,8 +2,8 @@ import OrderItemType from "./OrderItemType"
 
 interface OrderType {
     id: number,
-    totalPrice: number,
     date: Date,
+    totalPrice: number,
     orderedItems: OrderItemType[]
 }
 
