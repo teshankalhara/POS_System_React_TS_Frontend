@@ -13,6 +13,7 @@ import CreateOrder from './pages/Order/CreateOrder'
 import NavBar from './components/NavBar/NavBar'
 import { AuthProvider } from './context/AuthContext'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
+import Footer from './components/Footer/Footer'
 
 function App() {
 
@@ -37,6 +38,7 @@ function App() {
             </Route>
             {/*protected routes*/}
           </Routes>
+          <Footer/>
         </BrowserRouter>
       </AuthProvider>
     </>
