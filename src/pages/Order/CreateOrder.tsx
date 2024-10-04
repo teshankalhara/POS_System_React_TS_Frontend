@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
-import StockType from "../../types/StockType"
+import StockType from "../../types/Stock/StockType"
 import { useAuth } from "../../context/AuthContext"
 import axios from "axios"
-import ItemType from "../../types/ItemType"
+import ItemType from "../../types/Item/ItemType"
 
 function CreateOrder() {
     const { isAuthenticated, jwtToken } = useAuth()

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import OrderType from "../../types/OrderType"
+import OrderType from "../../types/Order/OrderType"
 import axios from "axios"
 import { useAuth } from "../../context/AuthContext"
 import { useNavigate } from "react-router-dom"

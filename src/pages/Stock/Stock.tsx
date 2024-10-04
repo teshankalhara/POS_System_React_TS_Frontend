@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
-import ItemType from "../../types/ItemType"
 import { useAuth } from "../../context/AuthContext"
 import axios from "axios"
-import StockType from "../../types/StockType"
+import StockType from "../../types/Stock/StockType"
+import ItemType from "../../types/Item/ItemType"
 
 function Stock() {
     const { isAuthenticated, jwtToken } = useAuth()

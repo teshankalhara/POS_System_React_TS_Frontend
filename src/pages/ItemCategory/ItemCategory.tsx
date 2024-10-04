@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useAuth } from "../../context/AuthContext"
-import ItemCategoryType from "../../types/ItemCategoryType"
+import ItemCategoryType from "../../types/ItemCategory/ItemCategoryType"
 import axios from "axios"
 
 function ItemCategory() {

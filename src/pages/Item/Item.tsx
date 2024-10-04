@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
-import ItemType from "../../types/ItemType"
-import ItemCategoryType from "../../types/ItemCategoryType"
+import ItemCategoryType from "../../types/ItemCategory/ItemCategoryType"
 import { useAuth } from "../../context/AuthContext"
 import axios from "axios"
+import ItemType from "../../types/Item/ItemType"
 
 function Item() {
     const { isAuthenticated, jwtToken } = useAuth()
