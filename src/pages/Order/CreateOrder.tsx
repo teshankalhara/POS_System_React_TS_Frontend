@@ -72,7 +72,7 @@ function CreateOrder() {
             return
         }
 
-        const stock = stocks.find(stock => stock.id === itemId) 
+        const stock = stocks.find(stock => stock.id === itemId)
 
         if (!stock) {
             console.error(`Stock not found for item ID: ${itemId}`)
