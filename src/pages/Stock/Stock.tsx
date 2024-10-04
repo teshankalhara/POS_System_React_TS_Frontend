@@ -39,8 +39,8 @@ function Stock() {
 
     useEffect(() => {
         if (isAuthenticated) {
-            loadItem()
             loadStock()
+            loadItem()
         }
     }, [isAuthenticated])
 
