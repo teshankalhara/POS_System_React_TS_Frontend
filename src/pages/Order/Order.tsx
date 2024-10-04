@@ -2,10 +2,13 @@ import { useEffect, useState } from "react"
 import OrderType from "../../types/OrderType"
 import axios from "axios"
 import { useAuth } from "../../context/AuthContext"
+import { useNavigate } from "react-router-dom"
 
 function Order() {
     const { isAuthenticated, jwtToken } = useAuth()
     const [orders, setOrders] = useState<OrderType[]>([])
+
+    const navigate=useNavigate()
 
     const config = {
         headers: {
@@ -37,7 +40,7 @@ function Order() {
             <div className="container mx-auto mb-10">
                 <div className="flex justify-center items-center mt-4 mb-8 border-b-2 border-b-slate-200 pb-5">
                     <div className="max-w-[200px]">
-                        <button className="w-full text-white rounded-lg px-4 py-3 font-medium bg-slate-700 hover:bg-slate-800" type="button">
+                        <button onClick={()=>{navigate('/order/create')}} className="w-full text-white rounded-lg px-4 py-3 font-medium bg-slate-700 hover:bg-slate-800" type="button">
                             Create Order
                         </button>
                     </div>
