@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import AuthContextType from "../types/AuthContextType";
-import AuthProviderPropsType from "../types/AuthProviderPropsType";
+import AuthContextType from "../types/Auth/AuthContextType";
+import AuthProviderPropsType from "../types/Auth/AuthProviderPropsType";
 
 export const AuthContext = createContext<AuthContextType>({
     isAuthenticated: false,
