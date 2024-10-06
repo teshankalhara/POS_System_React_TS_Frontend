@@ -65,7 +65,7 @@ function ItemCategory() {
                         <form className="border border-slate-200 rounded-lg max-w-[500px] min-w-[400px] center p-4 shadow-lg">
                             <div>
                                 <label className="text-slate-600 font-sm block mb-2">Name:</label>
-                                <input className="text-slate-600 font-sm block mb-2 w-full p-2 border border-slate-300 rounded-lg mb-4" type="text" onChange={handleCategoryName} value={categoryName} placeholder="Enter Category Name" required />
+                                <input className="text-slate-600 font-sm block w-full p-2 border border-slate-300 rounded-lg mb-4" type="text" onChange={handleCategoryName} value={categoryName} placeholder="Enter Category Name" required />
                             </div>
 
                             <div>
