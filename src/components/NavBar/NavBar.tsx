@@ -16,7 +16,7 @@ function NavBar() {
     const location = useLocation()
     return (
         <>
-            <nav className="py-2 px-4 shadow-xl mb-5">
+            <nav className="py-2 px-4 shadow-xl pb-5">
                 <ul className="flex items-center justify-between">
                     <li >
                         <Link to="/" className={`text-xl font-bold transition-colors duration-300 ${location.pathname === "/" ? "text-red-500" : "text-blue-500"} hover:text-red-500`}>

@@ -47,7 +47,7 @@ function Login() {
 
     return (
         <>
-        <div className="mt-6 mb-8 py-5">
+        <div className="pt-8 pb-12 bg-zinc-100">
             <div className="text-center border-b-2 border-b-slate-200 pb-3 mb-8">
                 <h1 className="text-3xl font-extrabold mb-5">Login</h1>
             </div>
